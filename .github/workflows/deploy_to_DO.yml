@@ -22,8 +22,14 @@ jobs:
         env:
           DROPLET_IP: ${{ secrets.DROPLET_IP }}
         run: |
-          echo "This is a manual1 run - ${{ secrets.DROPLET_IP }}"
-          echo "hey? ${{ secrets.PRIVATE_KEY }}"
-          echo "hey? ${{ secrets.PRIVATE_KEY2 }}"
-          echo "hey? $IP_ADDRESS"
-          echo "hey? ${{ vars.IP_ADDRESS }}"
+          echo "This is how you access a secret (it won't display in echo though) --> ${{ secrets.PRIVATE_KEY }}"
+          echo "For a regular environment be sure to set the 'environment' under deploy --> $IP_ADDRESS"
+          echo "Or maybe? ${{ vars.IP_ADDRESS }}"
+
+      - name: SSH and list files
+        uses: appleboy/ssh-action@master
+        with:
+          host: $IP_ADDRESS
+          username: summershades
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: ls -la

@@ -20,4 +20,6 @@ jobs:
       - name: Echo environment variable2
         env:
           DROPLET_IP: ${{ secrets.DROPLET_IP }}
-        run: echo "This is a manual1 run - ${{ secrets.DROPLET_IP }}"
+        run: |
+          echo "This is a manual1 run - ${{ secrets.DROPLET_IP }}"
+          echo "hey? $MY_PUBLIC_VARIABLE"

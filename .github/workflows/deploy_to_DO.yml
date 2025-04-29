@@ -23,3 +23,4 @@ jobs:
         run: |
           echo "This is a manual1 run - ${{ secrets.DROPLET_IP }}"
           echo "hey? $MY_PUBLIC_VARIABLE"
+          echo "hey? ${{ vars.MY_PUBLIC_VARIABLE }}"

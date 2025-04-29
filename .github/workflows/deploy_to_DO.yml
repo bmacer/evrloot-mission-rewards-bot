@@ -9,6 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: "Brandons DO Environment"  # <-- Set this to match your environment name
 
     steps:
       - name: Echo environment variable

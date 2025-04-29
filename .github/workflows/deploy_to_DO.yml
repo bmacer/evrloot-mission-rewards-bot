@@ -20,6 +20,8 @@ jobs:
           node-version: '14'
 
       - name: Echo environment variable
+        env:
+          DROPLET_IP: ${{ secrets.DROPLET_IP }}
         run: echo "This is a manual run - $DROPLET_IP"
 
       - name: SSH into droplet and run main script

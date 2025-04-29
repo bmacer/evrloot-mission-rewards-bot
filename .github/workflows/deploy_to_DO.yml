@@ -20,7 +20,7 @@ jobs:
           node-version: '14'
 
       - name: Echo environment variable
-        run: echo 'This is a manual run - $DROPLET_IP'
+        run: echo "This is a manual run - $DROPLET_IP"
 
       - name: SSH into droplet and run main script
         if: github.ref == 'refs/heads/main'

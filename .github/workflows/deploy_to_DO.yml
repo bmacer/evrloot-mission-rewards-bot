@@ -28,6 +28,8 @@ jobs:
           echo "Or maybe? $IP_ADDRESS"
 
       - name: SSH and list files
+        env:
+          IP_ADDRESS: ${{ vars.IP_ADDRESS }}
         uses: appleboy/ssh-action@master
         with:
           host: $IP_ADDRESS

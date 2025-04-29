@@ -15,7 +15,6 @@ jobs:
       - name: Echo environment variable
         env:
           DROPLET_IP: ${{ secrets.DROPLET_IP }}
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           IP_ADDRESS: ${{ vars.IP_ADDRESS }}
         run: echo "This is a manual run - $DROPLET_IP"
        
